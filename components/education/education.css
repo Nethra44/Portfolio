@@ -1,0 +1,61 @@
+.education-card {
+    display: flex;
+    gap: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.edu-icon {
+    font-size: 3rem;
+    background: var(--bg-dark);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.edu-year-badge {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+}
+
+.edu-degree {
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0.25rem;
+}
+
+.edu-field {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.edu-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.edu-meta-item {
+    font-size: 0.9rem;
+}
+
+.meta-label {
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+}
+
+.meta-value {
+    color: var(--text-primary);
+}

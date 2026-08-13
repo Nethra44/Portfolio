@@ -1,0 +1,102 @@
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-normal);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-highlight);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-card {
+    border-color: rgba(139, 92, 246, 0.5);
+}
+
+.project-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.project-tag.ai-tag {
+    color: var(--accent-purple);
+}
+
+.project-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-pill {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-secondary);
+}
+
+.tech-pill.ai-pill {
+    color: #c084fc;
+    border-color: rgba(192, 132, 252, 0.3);
+}
+
+.project-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.link-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--text-secondary);
+}
+
+.link-icon:hover {
+    color: var(--accent-blue);
+}

@@ -1,0 +1,95 @@
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.skills-category {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Updated SVG Icon Container */
+.category-icon-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 8px;
+    color: var(--accent-cyan);
+}
+
+.category-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.badges-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition-fast, all 0.2s ease);
+}
+
+.tech-badge:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+}
+
+/* Pulsing dot for learning items */
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--accent-cyan);
+}
+
+/* AI Pill Glow Styles */
+.ai-badge {
+    border-color: rgba(139, 92, 246, 0.4);
+    background: rgba(139, 92, 246, 0.05);
+    color: var(--text-primary);
+}
+
+.ai-badge svg {
+    color: var(--accent-purple, #a855f7);
+}
+
+.ai-badge:hover {
+    border-color: var(--accent-purple, #a855f7);
+    background: rgba(139, 92, 246, 0.12);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .skills-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
