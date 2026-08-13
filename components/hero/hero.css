@@ -68,14 +68,18 @@
     line-height: 1.7;
 }
 
+/* Updated hero-actions to gracefully wrap extra buttons on smaller screens */
 .hero-actions {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
     margin-top: 0.5rem;
 }
 
 .social-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -90,6 +94,8 @@
     border-radius: 6px;
     font-size: 0.85rem;
     color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
 .social-icon-btn:hover {
@@ -113,4 +119,21 @@
     opacity: 0.15;
     z-index: -1;
     pointer-events: none;
+}
+
+/* Mobile responsive adjustment */
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-actions {
+        width: 100%;
+    }
+    
+    .hero-actions .btn {
+        flex: 1 1 auto;
+        justify-content: center;
+        text-align: center;
+    }
 }

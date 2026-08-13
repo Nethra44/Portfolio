@@ -3,7 +3,7 @@ class HeroComponent extends HTMLElement {
     this.innerHTML = `
             <section id="home" class="hero-section">
                 <div class="container hero-container">
-                                       
+                                        
                     <h1 class="hero-title">
                         Hi, I'm <span class="gradient-text">Nethra C</span>
                     </h1>
@@ -20,7 +20,20 @@ class HeroComponent extends HTMLElement {
                     
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        
+                        <!-- Resume Action Buttons -->
+                        <a href="./assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            View Resume ↗
+                        </a>
+                        
+                        <a href="./assets/Resume.pdf" id="downloadResumeBtn" class="btn btn-outline" aria-label="Download Resume">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px;">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Resume
+                        </a>
                     </div>
 
                     <div class="social-links">
@@ -51,7 +64,45 @@ class HeroComponent extends HTMLElement {
                 <div class="hero-bg-glow"></div>
             </section>
         `;
+
     this.initTypingEffect();
+    this.initDownloadHandler();
+  }
+
+  initDownloadHandler() {
+    const downloadBtn = this.querySelector("#downloadResumeBtn");
+    if (!downloadBtn) return;
+
+    downloadBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const pdfUrl = "./assets/Resume.pdf";
+      const fileName = "Nethra_C_Resume.pdf";
+
+      try {
+        const response = await fetch(pdfUrl);
+        if (!response.ok) throw new Error("Network response was not ok");
+
+        const blob = await response.blob();
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const a = document.createElement("a");
+          a.href = reader.result;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        };
+        reader.readAsDataURL(blob);
+      } catch (err) {
+        const a = document.createElement("a");
+        a.href = pdfUrl;
+        a.setAttribute("download", fileName);
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    });
   }
 
   initTypingEffect() {
